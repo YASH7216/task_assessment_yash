@@ -1,0 +1,208 @@
+/* index.css */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  font-size: 20px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; /* Added padding to ensure the container has some space around it */
+}
+
+.container {
+  background-color: #FFF;
+  padding: 32px 48px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  max-height: 90vh; /* Adjusted max-height to ensure it fits within the viewport */
+  overflow-y: auto; /* Added overflow to handle any content that exceeds the height */
+}
+
+.container > h1 {
+  margin-bottom: 20px;
+}
+
+.container > form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container div {
+  display: flex;
+  flex-direction: column;
+}
+
+.container input,
+.container select {
+  width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+}
+
+.container input::placeholder {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.container select {
+  background-color: transparent;
+}
+
+.container .radio-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.container .radio-group label {
+  font-size: 16px;
+}
+
+button {
+  background-color: purple;
+  border: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+/* Navbar styles */
+.navbar {
+  width: 100%;
+  background-color: rgb(80, 32, 80);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: x-large;
+  z-index: 1000;
+}
+
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.navbar-left{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+
+
+.navbar-right span {
+  color: white;
+}
+
+.navbar-right button {
+  background-color: red;
+  padding: 5px 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.home-container {
+  padding-top: 60px; /* Add padding to prevent content from being hidden behind navbar */
+  width: 100%;
+  max-width: 1200px;
+}
+
+
+/* General table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px; /* Add some margin at the top of the table */
+  font-size: 16px;
+}
+
+th, td {
+  padding: 12px 15px; /* Add padding for better spacing */
+  text-align: left; /* Align text to the left */
+  border: 1px solid #ddd; /* Add border to table cells */
+}
+
+/* Table header styling */
+th {
+  background-color: #f4f4f4; /* Light grey background for header */
+  font-weight: bold;
+}
+
+/* Alternate row coloring for better readability */
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Image styling */
+td img {
+  max-width: 50px;
+  border-radius: 5px; /* Rounded corners for images */
+}
+
+/* Make table responsive */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead tr {
+    display: none; /* Hide table headers */
+  }
+  tr {
+    margin-bottom: 15px;
+  }
+  td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  td::before {
+    content: attr(data-label); /* Add label content */
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
